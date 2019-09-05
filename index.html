@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ridge Crest Earthquakes Audio Visual Demo">
+    <meta name="author" content="Csaba Toth">
+
+    <title>Ridge Crest Quake Audio Demo</title>
+
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/quakes.css" rel="stylesheet"/>
+
+    <script src="bower_components/bootstrap.native/dist/polyfill.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Ridge Crest Demo</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <li class="page-scroll">
+              <a href="https://csaba.page/">Csaba's Page</a>
+            </li>
+            <li class="page-scroll">
+              <a href="https://www.meetup.com/Fresno-Data-Science-Meetup/">Fresno Data Science Meetup</a>
+            </li>
+            <li class="page-scroll">
+              <a href="https://www.meetup.com/googledevelopers/">GDG Fresno</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="embed-responsive embed-responsive-4by3">
+        <div id="canvasContainer" class="embed-responsive-item"></div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="start">Start Demo</button>
+      <textarea id="quakeInfo" rows="1" cols="60"></textarea>
+      <input type="integer" id="percent" min="0" max="100">
+      <input type="range" id="progress" min="0" max="100">
+      <input id="playtime" type="value" value="10" style="display: none">
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2019 Csaba Toth</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <script type="text/javascript" src="bower_components/bootstrap.native/dist/bootstrap-native.min.js"></script>
+
+    <script src="data/quakes.jsonp"></script>
+    <script type="text/javascript" src="js/quakes.js"></script>
+  </body>
+</html>

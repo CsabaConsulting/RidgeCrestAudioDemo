@@ -1,0 +1,16 @@
+{
+  "name": "ridge_crest",
+  "version": "0.0.0",
+  "description": "Ridge Crest Audio Demo",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap.native": "~2.0.27"
+  }
+}
