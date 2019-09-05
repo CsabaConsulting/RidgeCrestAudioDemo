@@ -1,4 +1,2 @@
 .npmignore
 .vscode/
-node_modules/
-bower_components/
