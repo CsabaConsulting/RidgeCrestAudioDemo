@@ -20,7 +20,7 @@ document.translateY = function(geoY) {
 
 function RapidSoundsSample(context) {
   var ctx = this;
-  var loader = new BufferLoader(context, ['/sounds/m4a1cropshort.mp3'], onBufferLoaded);
+  var loader = new BufferLoader(context, ['sounds/m4a1cropshort.mp3'], onBufferLoaded);
   
   function onBufferLoaded(buffers) {
     console.log("buffer loaded!!!")
