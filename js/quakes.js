@@ -152,6 +152,7 @@ document.addEventListener('readystatechange', function(stateChangeEvent) {
     var endTime = document.quakes[document.quakes.length - 1][1];
     var startTime = document.quakes[0][1];
     var timeScale = endTime - document.quakes[0][1];
+    var magLimit = document.getElementById("magLimit").value;
 
     (function addDot() {
       setTimeout(function() {
@@ -164,7 +165,7 @@ document.addEventListener('readystatechange', function(stateChangeEvent) {
           var qy = document.translateY(quake[3]);
           var magNormalized = (magnitude - document.magMin) / document.magMax;
 
-          if (!lastPlayed || magnitude >= 3.5 && Date.now() - lastPlayed > 50) {
+          if (!lastPlayed || magnitude >= magLimit && Date.now() - lastPlayed > 50) {
             lastPlayed = Date.now();
             soundSample.shootRound(magNormalized);
           }
