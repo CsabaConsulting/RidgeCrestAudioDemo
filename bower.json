@@ -1,7 +1,7 @@
 {
-  "name": "ridge_crest",
+  "name": "ridgecrest",
   "version": "0.0.0",
-  "description": "Ridge Crest Audio Demo",
+  "description": "Ridgecrest Audio / Visual Demo",
   "license": "MIT",
   "ignore": [
     "**/.*",
