@@ -23,7 +23,6 @@ function RapidSoundsSample(context) {
   var loader = new BufferLoader(context, ['sounds/m4a1cropshort.mp3'], onBufferLoaded);
   
   function onBufferLoaded(buffers) {
-    console.log("buffer loaded!!!")
     ctx.buffers = buffers;
   };
   
@@ -53,7 +52,7 @@ RapidSoundsSample.prototype.shootRound = function(volume) {
   var source = this.makeSource(this.buffers[0], volume);
   // source.playbackRate.value = 1 + Math.random() * random2;
   source[source.start ? 'start' : 'noteOn'](time);
-}
+};
 
 /**
  * Converts an HSL color value to RGB. Conversion formula
@@ -103,7 +102,7 @@ function hslToRgbHex(h, s, l) {
   }
 
   return "#" + dec2hex(Math.round(r * 255)) + dec2hex(Math.round(g * 255)) + dec2hex(Math.round(b * 255));
-}
+};
 
 document.addEventListener('readystatechange', function(stateChangeEvent) {
   if (stateChangeEvent.target.readyState !== 'interactive') {
@@ -153,7 +152,8 @@ document.addEventListener('readystatechange', function(stateChangeEvent) {
     var startTime = document.quakes[0][1];
     var timeScale = endTime - document.quakes[0][1];
     var magLimit = document.getElementById("magLimit").value;
-
+    var playSound = document.getElementById("sound").checked;
+    
     (function addDot() {
       setTimeout(function() {
         // document.quakes.length 1725
@@ -165,7 +165,7 @@ document.addEventListener('readystatechange', function(stateChangeEvent) {
           var qy = document.translateY(quake[3]);
           var magNormalized = (magnitude - document.magMin) / document.magMax;
 
-          if (!lastPlayed || magnitude >= magLimit && Date.now() - lastPlayed > 50) {
+          if (playSound && (!lastPlayed || magnitude >= magLimit && Date.now() - lastPlayed > 50)) {
             lastPlayed = Date.now();
             soundSample.shootRound(magNormalized);
           }
@@ -175,8 +175,6 @@ document.addEventListener('readystatechange', function(stateChangeEvent) {
           canvasContext.beginPath();
           canvasContext.arc(qx, qy, magNormalized * 20, 0, Math.PI * 2);
           var magColor = hslToRgbHex(magNormalized, 0.9, 0.6);
-          if (dotCounter < 100)
-              console.log(magNormalized, magColor);
           canvasContext.strokeStyle = magColor;
           canvasContext.fillStyle = magColor;
           canvasContext.stroke();
@@ -194,5 +192,5 @@ document.addEventListener('readystatechange', function(stateChangeEvent) {
         }
       }, delay);
     })();
-  }
+  };
 });
